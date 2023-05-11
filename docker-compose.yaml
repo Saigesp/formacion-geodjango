@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+
+  db-backend:
+    image: postgis/postgis:13-master
+    shm_size: 1g
+    container_name: formacion_geodjango
+    env_file: local.env
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: .Passw0rd.
+      POSTGRES_DB: formacion_geodjango
+    network_mode: host
+    volumes:
+      - /home/santi/gwg-sql:/aux_data
